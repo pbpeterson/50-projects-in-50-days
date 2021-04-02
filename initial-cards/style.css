@@ -17,23 +17,23 @@ body {
 }
 
 .img1 {
-  background: url("initial-cards/img/img1.jpg") no-repeat center center;
+  background: url("/initial-cards/img/img1.jpg") no-repeat center center;
 }
 
 .img2 {
-  background: url("initial-cards/img/img2.jpg") no-repeat center center;
+  background: url("/initial-cards/img/img2.jpg") no-repeat center center;
 }
 
 .img3 {
-  background: url("initial-cards/img/img3.jpg") no-repeat center center;
+  background: url("/initial-cards/img/img3.jpg") no-repeat center center;
 }
 
 .img4 {
-  background: url("initial-cards/img/img4.jpg") no-repeat center center;
+  background: url("/initial-cards/img/img4.jpg") no-repeat center center;
 }
 
 .img5 {
-  background: url("initial-cards/img/img5.jpg") no-repeat center center;
+  background: url("/initial-cards/img/img5.jpg") no-repeat center center;
 }
 
 .painel {
