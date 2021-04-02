@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.img1 {
+  background: url("initial-cards/img/img1.jpg") no-repeat center center;
+}
+
+.img2 {
+  background: url("initial-cards/img/img2.jpg") no-repeat center center;
+}
+
+.img3 {
+  background: url("initial-cards/img/img3.jpg") no-repeat center center;
+}
+
+.img4 {
+  background: url("initial-cards/img/img4.jpg") no-repeat center center;
+}
+
+.img5 {
+  background: url("initial-cards/img/img5.jpg") no-repeat center center;
+}
+
+.painel {
+  background-size: cover;
+  flex: 0.5;
+  height: 80vh;
+  border-radius: 50px;
+  margin: 10px;
+  cursor: pointer;
+  transition: flex 0.7s ease-in;
+}
+
+.painel.ativo {
+  flex: 5;
+}
+
+@media (max-width: 739px) {
+  .container {
+    width: 100vw;
+  }
+
+  .painel:nth-of-type(4),
+  .painel:nth-of-type(5) {
+    display: none;
+  }
+}
