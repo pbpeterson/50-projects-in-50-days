@@ -4,7 +4,7 @@ const div = document.querySelector('.infos')
 
 async function exibeDadosPostais(){
   if(cep.value.length !=8){
-    alert('Insira um Cep válido')
+    alert('Insira um CEP válido')
     cep.value = ''
   }
   else{
@@ -13,9 +13,16 @@ async function exibeDadosPostais(){
     }
       const pegaCep = await fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
       const cepJson = await pegaCep.json()
-      const novoP = document.createElement('p')
-      novoP.innerText = `Rua ${cepJson.logradouro} \n  Bairro: ${cepJson.bairro} \n Cidade: ${cepJson.localidade} \n UF: ${cepJson.uf}`
-      div.appendChild(novoP)
+      if (cepJson.erro){
+        alert('Insira um CEP válido')
+      cep.value = ''
+      }
+      else{
+        const novoP = document.createElement('p')
+        novoP.innerText = `Rua ${cepJson.logradouro} \n  Bairro: ${cepJson.bairro} \n Cidade: ${cepJson.localidade} \n UF: ${cepJson.uf}`
+        div.appendChild(novoP)
+      }
+      
   }
  
 }
