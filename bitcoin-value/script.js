@@ -8,9 +8,10 @@ async function pegaValorBtc(){
   content.innerHTML = `<p> O Valor de 1 Bitcoin está em R$ ${valorBtc}</p>`
 };
 
+pegaValorBtc();
 setInterval(()=>{
   pegaValorBtc();
-}, 2000);
+}, 200000);
 
 
 
