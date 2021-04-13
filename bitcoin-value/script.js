@@ -11,7 +11,7 @@ async function pegaValorBtc(){
 pegaValorBtc();
 setInterval(()=>{
   pegaValorBtc();
-}, 200000);
+}, 300000);
 
 
 
