@@ -16,8 +16,17 @@ button:focus {
   outline: none;
 }
 
+.content {
+  width: 700px;
+  height: 400px;
+  align-self: center;
+  background: #ffffff;
+  box-shadow: 0px 0.3px 1.2px rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
 .content button {
-  margin: 0 auto;
+  margin: 80px auto 0 auto;
   display: block;
   border: none;
   background: #f58354;
@@ -28,7 +37,23 @@ button:focus {
 }
 
 p {
+  width: 600px;
+  margin: 50px auto;
   color: #222;
-  margin-top: 50px;
   font-size: 20px;
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .content {
+    width: 320px;
+  }
+
+  p {
+    width: 300px;
+    font-size: 18px;
+  }
 }

@@ -7,4 +7,5 @@ async function pegaEMostraPiada(){
   piada.innerText = piadaJson.value
 }
 
+pegaEMostraPiada()
 botao.addEventListener('click', pegaEMostraPiada);
