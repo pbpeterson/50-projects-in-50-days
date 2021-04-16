@@ -28,6 +28,10 @@ async function exibeDadosPostais(){
 
 function limpaCep(){
   cep.value = cep.value.replace(/\D/g, '')
+  if (cep.value.length > 8){
+    alert('Insira um cep válido')
+    cep.value = ''
+  }
 }
 
 
