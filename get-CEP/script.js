@@ -24,7 +24,12 @@ async function exibeDadosPostais(){
       }
       
   }
- 
 }
 
+function limpaCep(){
+  cep.value = cep.value.replace(/\D/g, '')
+}
+
+
+cep.addEventListener('change', limpaCep)
 botao.addEventListener('click', exibeDadosPostais)
