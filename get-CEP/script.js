@@ -3,7 +3,7 @@ const botao = document.querySelector('button')
 const div = document.querySelector('.infos')
 
 async function exibeDadosPostais(){
-  if(cep.value.length !=8){
+  if(cep.value.length !=9){
     alert('Insira um CEP válido')
     cep.value = ''
   }
@@ -11,7 +11,7 @@ async function exibeDadosPostais(){
     if (div.innerText.length){
       div.removeChild(div.firstElementChild)
     }
-      const pegaCep = await fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+      const pegaCep = await fetch(`https://viacep.com.br/ws/${cep.value.replace(/\D/g, '')}/json/`)
       const cepJson = await pegaCep.json()
       if (cepJson.erro){
         alert('Insira um CEP válido')
@@ -27,10 +27,10 @@ async function exibeDadosPostais(){
 }
 
 function limpaCep(){
-  cep.value = cep.value.replace(/\D/g, '')
-  if (cep.value.length > 8){
-    alert('Insira um cep válido')
+  cep.value = cep.value.replace(/\D/g, '').replace(/(\d{5})(\d{3})/g, '$1-$2')
+  if (cep.value.length !=9){
     cep.value = ''
+    alert('Insira um CEP válido.')
   }
 }
 
