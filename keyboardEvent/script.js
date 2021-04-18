@@ -10,7 +10,6 @@ function keyFunction(event){
   eventKey.innerText = event.key;
   eventKeyCode.innerText = event.keyCode;
   eventCode.innerText = event.code
-  console.log(event);
 }
 
 window.addEventListener('keydown', keyFunction);
