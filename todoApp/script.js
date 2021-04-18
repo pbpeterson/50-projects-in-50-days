@@ -24,6 +24,12 @@ function adicionarTarefa(){
     tarefa.value = '';
     fecharButton = document.querySelectorAll('.button');
     pendents.classList.add('ativo')
+    const tarefaPendente = document.querySelector('.tarefaPendente');
+    if (fecharButton.length ==1){
+      console.log('oi')
+      tarefaPendente.innerText = `Você tem ${fecharButton.length} tarefa pendentes`}
+  else{
+    tarefaPendente.innerText = `Você tem ${fecharButton.length} tarefas pendentes`}
   }
   fecharButton.forEach((fechar) =>{
     fechar.addEventListener('click', removeSelf)
