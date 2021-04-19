@@ -54,6 +54,9 @@ button {
   border-radius: 3px;
   cursor: pointer;
 }
+button:focus {
+  outline: none;
+}
 
 .content {
   background: #f2f2f2;
@@ -62,6 +65,7 @@ button {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
+  animation: desceAnima 0.3s forwards;
 }
 .content p {
   margin-left: 10px;
@@ -89,6 +93,7 @@ button {
   font-size: 14px;
   justify-content: space-between;
   align-items: center;
+  animation: desceAnima 0.8s forwards;
 }
 
 .pendents.ativo {
@@ -109,5 +114,16 @@ button {
   }
   input {
     margin-left: 3px;
+  }
+}
+
+@keyframes desceAnima {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
