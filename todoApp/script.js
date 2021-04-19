@@ -6,6 +6,18 @@ let fecharButton = document.querySelectorAll('.button');
 const limparTudo = document.querySelector('.clearAll');
 const tasks = document.querySelector('.contents');
 
+
+function setValue(){
+  tasks.innerHTML = Object.values(localStorage)
+  atualizaTask()
+  if(fecharButton.length){
+    pendents.classList.add('ativo');
+  }
+  fecharButton.forEach((fechar) =>{
+    fechar.addEventListener('click', removeSelf)
+  });
+}
+
 function atualizaTask(){
   fecharButton = document.querySelectorAll('.button');
   const tarefaPendente = document.querySelector('.tarefaPendente');
@@ -22,6 +34,7 @@ function removeSelf(event){
       pendents.classList.remove('ativo');
     }
     atualizaTask()
+    saveHtml('content', tasks.innerHTML)
 }
 
 function adicionarTarefa(){
@@ -38,6 +51,7 @@ function adicionarTarefa(){
   fecharButton.forEach((fechar) =>{
     fechar.addEventListener('click', removeSelf)
   });
+  saveHtml('content', tasks.innerHTML)
 }
 
 
@@ -49,5 +63,11 @@ function removerTudo(){
   pendents.classList.remove('ativo');
 }
 
+function saveHtml(value, html){
+  localStorage[value] = html
+}
+
+setValue()
+saveHtml('content', tasks.innerHTML)
 adicionar.addEventListener('click', adicionarTarefa);
 limparTudo.addEventListener('click', removerTudo);
