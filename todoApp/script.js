@@ -6,12 +6,22 @@ let fecharButton = document.querySelectorAll('.button');
 const limparTudo = document.querySelector('.clearAll');
 const tasks = document.querySelector('.contents');
 
+function atualizaTask(){
+  fecharButton = document.querySelectorAll('.button');
+  const tarefaPendente = document.querySelector('.tarefaPendente');
+  if (fecharButton.length ==1){
+    tarefaPendente.innerText = `Você tem ${fecharButton.length} tarefa pendentes`}
+  else{
+  tarefaPendente.innerText = `Você tem ${fecharButton.length} tarefas pendentes`}
+}
+
 function removeSelf(event){
     event.path[1].remove()
     const conteudos = document.querySelectorAll('.content');
     if(conteudos.length ==0){
       pendents.classList.remove('ativo');
     }
+    atualizaTask()
 }
 
 function adicionarTarefa(){
@@ -22,14 +32,8 @@ function adicionarTarefa(){
     newDiv.innerHTML = `<p>${tarefa.value}</p> \n <p class="button">✖</p>`;
     tasks.appendChild(newDiv);
     tarefa.value = '';
-    fecharButton = document.querySelectorAll('.button');
-    pendents.classList.add('ativo')
-    const tarefaPendente = document.querySelector('.tarefaPendente');
-    if (fecharButton.length ==1){
-      console.log('oi')
-      tarefaPendente.innerText = `Você tem ${fecharButton.length} tarefa pendentes`}
-  else{
-    tarefaPendente.innerText = `Você tem ${fecharButton.length} tarefas pendentes`}
+    pendents.classList.add('ativo');
+    atualizaTask()
   }
   fecharButton.forEach((fechar) =>{
     fechar.addEventListener('click', removeSelf)
@@ -40,13 +44,10 @@ function adicionarTarefa(){
 function removerTudo(){
   const conteudos = document.querySelectorAll('.content');
   conteudos.forEach((conteudo) =>{
-    conteudo.remove()
+    conteudo.remove();
   })
   pendents.classList.remove('ativo');
 }
 
 adicionar.addEventListener('click', adicionarTarefa);
 limparTudo.addEventListener('click', removerTudo);
-
-
-
