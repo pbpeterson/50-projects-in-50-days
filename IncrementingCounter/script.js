@@ -1,15 +1,14 @@
 const numbers = document.querySelectorAll('h1');
 
 numbers.forEach((number)=>{
-  const armazenaNumber = +number.innerText;
-  const somador = Math.floor(armazenaNumber/100);
-  let start = 0
+  const valorNumber = +number.innerText;
+  let somador = Math.floor(valorNumber/900);
   const timer = setInterval(()=>{
-    start = start +somador
-    number.innerText = start
-    if(start > armazenaNumber){
-      number.innerText = armazenaNumber;
-      clearInterval(timer)
+    somador = somador + valorNumber/100;
+    number.innerText = somador;
+    if(somador > valorNumber){
+      clearInterval(timer);
+      number.innerText = valorNumber;
     }
-  },25 * Math.random())
+  }, 25 *Math.random())
 })
