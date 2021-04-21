@@ -15,6 +15,7 @@ async function pegaFilme(url){
 }
 
 function mostrarFilme(movies){
+  main.innerHTML = ''
   movies.forEach((movie) =>{
     const { title, poster_path, overview, vote_average} = movie;
     const currentMovie = document.createElement('div');
