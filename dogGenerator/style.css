@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  background: tomato;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+img {
+  border: 6px solid black;
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.dogsMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dogImg {
+  max-width: 500px;
+}
+
+.dog {
+  display: flex;
+}
