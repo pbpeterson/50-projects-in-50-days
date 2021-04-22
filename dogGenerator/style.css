@@ -39,7 +39,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: c;
+  align-items: center;
 }
 
 .click {
