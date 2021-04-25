@@ -116,6 +116,11 @@ button:focus {
     margin-left: 3px;
   }
 }
+@media (max-width: 800px) {
+  .button {
+    display: block;
+  }
+}
 
 @keyframes desceAnima {
   from {
