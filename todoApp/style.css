@@ -119,6 +119,9 @@ button:focus {
 @media (max-width: 800px) {
   .button {
     display: block;
+    background: none;
+    color: red;
+    align-self: center;
   }
 }
 
